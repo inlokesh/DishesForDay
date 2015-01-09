@@ -39,25 +39,8 @@ namespace DishesForDay.Library
         public bool ValidateInput(string[] input)
         {
             if (input.Length < 1)
-                return false;
+                return false;   
             return true;
-        }
-
-        public bool PrintDishOfDay(int dishType, int timeOfDay)
-        {
-            if (DishesOfDay != null)
-                if (DishesOfDay.Length > dishType)
-                {
-                    if (DishesOfDay[dishType].Length > timeOfDay)
-                        Console.Write(String.Format(" {0},", DishesOfDay[dishType][timeOfDay]));
-                    return true;
-                }
-                else
-                {
-                    Console.Write(String.Format(" {0}", "error"));
-                    return false;
-                }
-            return false;
         }
 
         /// <summary>
