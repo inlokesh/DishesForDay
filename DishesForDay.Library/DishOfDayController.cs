@@ -72,7 +72,7 @@ namespace DishesForDay.Library
                 return false;
             //Get the dishes requested
             var reqDishes = from dishes in Dishes.AsQueryable().Where(a => a.TimeOfDay == timeOfDay)
-                            where dishType.Contains(dishes.DishType)
+                            //where dishType.Contains(dishes.DishType)
                             select dishes;
             //Group by Requested dishes by DishTypes.
             var dishesGroup = from d in reqDishes
