@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DishesForDay.Console", "DishesForDay\DishesForDay.Console.csproj", "{3198DF49-3997-40ED-B6F7-067A336F0740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DishesForDay.Library", "DishesForDay.Library\DishesForDay.Library.csproj", "{6438832D-02D5-4351-B150-0BB065F309B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DishesForDay.Test", "DishesForDay.Test\DishesForDay.Test.csproj", "{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40E005F4-211F-4000-AEBB-84D8CDB87F63}"
+	ProjectSection(SolutionItems) = preProject
+		DishesForDay.vsmdi = DishesForDay.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DishesForDay.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Debug|x86.ActiveCfg = Debug|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Debug|x86.Build.0 = Debug|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Release|Any CPU.ActiveCfg = Release|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Release|Mixed Platforms.Build.0 = Release|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Release|x86.ActiveCfg = Release|x86
+		{3198DF49-3997-40ED-B6F7-067A336F0740}.Release|x86.Build.0 = Release|x86
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6438832D-02D5-4351-B150-0BB065F309B2}.Release|x86.ActiveCfg = Release|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BB7A4767-3F02-4F1E-BA3D-F30588B573BA}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
