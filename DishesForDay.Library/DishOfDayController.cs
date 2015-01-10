@@ -71,33 +71,57 @@ namespace DishesForDay.Library
             if (Dishes == null)
                 return false;
             //Get the dishes requested
-            var reqDishes = from dishes in Dishes.AsQueryable().Where(a => a.TimeOfDay == timeOfDay)
-                            //where dishType.Contains(dishes.DishType)
-                            select dishes;
+            //var reqDishes = from dishes in Dishes.AsQueryable().Where(a => a.TimeOfDay == timeOfDay)
+            //                where dishType.Contains(dishes.DishType)
+            //                select dishes;
+            var q = from c in dishType
+                    join p in Dishes.AsQueryable().Where(a => a.TimeOfDay == timeOfDay) on c equals p.DishType into ps
+                    from p in ps.DefaultIfEmpty()
+                    select new { DishType = c, Name = p == null ? "Error" : p.Name, TimeOfDay = p == null ? TimeOfDay.Error : p.TimeOfDay };
+
+            //Error 
             //Group by Requested dishes by DishTypes.
-            var dishesGroup = from d in reqDishes
+            var dishesGroup = from d in q
                               group d by d.DishType into dishTypeGroup
                               select new { DishType = dishTypeGroup.Key, Count = dishTypeGroup.Count(), Dishes = dishTypeGroup };
-            //Display the results
+            //Display the first result
+            var firstDishGroup = dishesGroup.First();
+            if (firstDishGroup == null)
+            {
+                Console.Write("OutPut : Error");
+                return false;
+            }
+            Console.Write("OutPut : " + firstDishGroup.Dishes.First().Name);
+            dishesGroup = dishesGroup.Skip(1);
+            //Display rest of the results
             foreach (var dG in dishesGroup)
             {
                 var dish = dG.Dishes.FirstOrDefault();
-                if (dish != null) Console.Write(" " + dish.Name);
-                else Console.Write(", Error");
+                if (dish == null)
+                {
+                    Console.Write(", Error");
+                    return false;
+                }
+                if (dish.TimeOfDay == TimeOfDay.Error)
+                {
+                    Console.Write(", Error");
+                    return false;
+                }
+                Console.Write(", " + dish.Name);
                 if (dG.Count > 1)
-                    foreach (var d in dG.Dishes)
+                {
+                    var d = dG.Dishes.FirstOrDefault();
+                    if (
+                        ((d.DishType == DishType.Drink) && (timeOfDay == TimeOfDay.Morning)) ||
+                        ((d.DishType == DishType.Side) && (timeOfDay == TimeOfDay.Evening))
+                        )
+                        Console.Write(String.Format("({0})", dG.Count));
+                    else
                     {
-                        if (
-                            ((d.DishType == DishType.Drink) && (timeOfDay == TimeOfDay.Morning)) ||
-                                ((d.DishType == DishType.Side) && (timeOfDay == TimeOfDay.Evening))
-                            )
-                            Console.Write(String.Format("({0})", dG.Count));
-                        else
-                        {
-                            Console.Write(", Error");
-                            return false;
-                        }
+                        Console.Write(", Error");
+                        return false;
                     }
+                }
             }
             return true;
         }
