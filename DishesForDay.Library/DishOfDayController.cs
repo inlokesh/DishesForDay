@@ -92,6 +92,7 @@ namespace DishesForDay.Library
                 return false;
             }
             Console.Write("OutPut : " + firstDishGroup.Dishes.First().Name);
+            //If multiple first dish request print count()
             if (firstDishGroup.Count > 1)
             {
                 var firstDish = firstDishGroup.Dishes.FirstOrDefault();
