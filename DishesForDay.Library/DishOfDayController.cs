@@ -92,6 +92,20 @@ namespace DishesForDay.Library
                 return false;
             }
             Console.Write("OutPut : " + firstDishGroup.Dishes.First().Name);
+            if (firstDishGroup.Count > 1)
+            {
+                var firstDish = firstDishGroup.Dishes.FirstOrDefault();
+                if (
+                    ((firstDish.DishType == DishType.Drink) && (timeOfDay == TimeOfDay.Morning)) ||
+                    ((firstDish.DishType == DishType.Side) && (timeOfDay == TimeOfDay.Evening))
+                    )
+                    Console.Write(String.Format("({0})", firstDishGroup.Count));
+                else
+                {
+                    Console.Write(", Error");
+                    return false;
+                }
+            }
             dishesGroup = dishesGroup.Skip(1);
             //Display rest of the results
             foreach (var dG in dishesGroup)

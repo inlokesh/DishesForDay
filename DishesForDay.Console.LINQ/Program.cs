@@ -18,7 +18,11 @@ namespace DishesForDay.Console.LINQ
                     dishes[i] = (DishType)Enum.Parse(typeof(DishType), args[i + 1].Replace(',', ' ').Trim(), true);
                 }
                 bool result = dishOfDayController.GetDishOfDay(dishes, input);
-                System.Console.Write(result);
+                if (!result)
+                {
+                    System.Console.WriteLine("");
+                    System.Console.WriteLine("Error: " + !result);
+                }
             }
             else
             {
