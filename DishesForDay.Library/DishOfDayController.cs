@@ -71,15 +71,11 @@ namespace DishesForDay.Library
             if (Dishes == null)
                 return false;
             //Get the dishes requested
-            //var reqDishes = from dishes in Dishes.AsQueryable().Where(a => a.TimeOfDay == timeOfDay)
-            //                where dishType.Contains(dishes.DishType)
-            //                select dishes;
             var q = from c in dishType
                     join p in Dishes.AsQueryable().Where(a => a.TimeOfDay == timeOfDay) on c equals p.DishType into ps
                     from p in ps.DefaultIfEmpty()
                     select new { DishType = c, Name = p == null ? "Error" : p.Name, TimeOfDay = p == null ? TimeOfDay.Error : p.TimeOfDay };
 
-            //Error 
             //Group by Requested dishes by DishTypes.
             var dishesGroup = from d in q
                               group d by d.DishType into dishTypeGroup
